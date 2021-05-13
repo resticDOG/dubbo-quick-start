@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>provider-spring-boot-registry-redis</artifactId>
+    <artifactId>consumer-spring-boot-registry-redis</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -42,4 +42,5 @@
             <artifactId>common</artifactId>
         </dependency>
     </dependencies>
+
 </project>

@@ -18,6 +18,7 @@
         <module>provider-spring-boot-direct</module>
         <module>consumer-spring-boot-direct</module>
         <module>provider-spring-boot-registry-redis</module>
+        <module>consumer-spring-boot-registry-redis</module>
     </modules>
     <packaging>pom</packaging>
 

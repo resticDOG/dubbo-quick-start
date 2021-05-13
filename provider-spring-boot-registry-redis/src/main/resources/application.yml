@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: dubbo-demo-provider-spring-boot-registry
+dubbo:
+  scan:
+    base-packages: ga.linkzz.service
+  protocol:
+    name: dubbo
+    port: 24355
+  registry:
+    address: redis://192.168.1.119:6379
+    username: root
+    password: 123456
