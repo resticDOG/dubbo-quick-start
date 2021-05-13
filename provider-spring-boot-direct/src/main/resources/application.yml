@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: dubbo-demo-provider-spring-boot
+dubbo:
+  scan:
+    base-packages: ga.linkzz.service
+  protocol:
+    name: dubbo
+    port: 24355
+  registry:
+    address: N/A

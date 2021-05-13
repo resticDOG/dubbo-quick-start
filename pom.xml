@@ -15,18 +15,23 @@
         <module>consumer-redis</module>
         <module>provider-annotation</module>
         <module>consumer-annotation</module>
+        <module>provider-spring-boot-direct</module>
+        <module>consumer-spring-boot-direct</module>
+        <module>provider-spring-boot-registry-redis</module>
     </modules>
     <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-core.version>5.3.5</spring-core.version>
-        <dubbo.version>2.7.0</dubbo.version>
+        <dubbo.version>2.7.8</dubbo.version>
         <curator.version>2.12.0</curator.version>
         <common.version>1.0-SNAPSHOT</common.version>
         <zookeeper.version>3.4.9</zookeeper.version>
         <jedis.version>2.9.0</jedis.version>
         <log4j.version>1.2.16</log4j.version>
+        <dubbo-spring-boot.version>2.7.8</dubbo-spring-boot.version>
+        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
     </properties>
 
     <dependencyManagement>
@@ -36,6 +41,44 @@
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
+            </dependency>
+
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Apache Dubbo  -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
@@ -68,6 +111,20 @@
                 <groupId>ga.linkzz</groupId>
                 <artifactId>common</artifactId>
                 <version>${common.version}</version>
+            </dependency>
+
+            <!--    dubbo spring boot starter        -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-spring-boot.version}</version>
+            </dependency>
+
+            <!--    spring boot        -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
             </dependency>
 
         </dependencies>
